@@ -21,7 +21,7 @@ template_id = os.environ["TEMPLATE_ID"]
 def get_weather():
   url = "https://www.yiketianqi.com/free/day?appid=86671595&appsecret=H0mI9qRU&unescape=1&city=" + city
   res = requests.get(url).json()
-  weather = res['data']['list'][0]
+  weather = res['data'][0]
   return weather['weather'], math.floor(weather['tem'])
 
 def get_count():
